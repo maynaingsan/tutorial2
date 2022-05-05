@@ -1,0 +1,15 @@
+.submitForm{
+  margin: 30px;
+  margin-left: 0;
+}
+.deletebtn{
+  width: 23px;
+  height: 23px;
+}
+.list{
+  line-height: 30px;
+}
+.newItem{
+  font-weight: normal;
+  font-size: 18px;
+}

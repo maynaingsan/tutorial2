@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <button @click="isHidden = !isHidden">Hide Form</button>
+    <br>
+    <h2>ToDo Count: {{ todos.length }}</h2>
+
+    <todos></todos>
+
+    <form @submit.prevent="addItem" v-if="!isHidden" class="submitForm">
+      <input type="text" v-model="newItem">
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Current: <span class="newItem">{{ newItem }} </span></h2>
+
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index" class="list">
+        {{ index }}: {{ todo }}
+        <button class="deletebtn" @click="deleteItem(index)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+            <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
