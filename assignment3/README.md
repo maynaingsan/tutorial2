@@ -1,4 +1,4 @@
-# Vuex-Serie
+# Assignment3
 ## Project setup
 ```
 npm install
